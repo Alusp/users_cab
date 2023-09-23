@@ -1,9 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:users_app/splash_screen.dart';
 
 void main() async
 {
   WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(
       MyApp(
         child: MaterialApp(
@@ -11,10 +13,7 @@ void main() async
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-    //  home: const MySplashScreen(),
-      // home: Scaffold(
-      //   appBar: AppBar(title: const Text("Welcome to drivers App")),
-      // ) ,
+     home: const MySplashScreen(),
       debugShowCheckedModeBanner: false,
     )
   ));
