@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:users_app/assistants/assistant_methods.dart';
 
 import 'authentication/login_screen.dart';
 import 'global/global.dart';
@@ -16,6 +17,7 @@ class MySplashScreen extends StatefulWidget {
 class _MySplashScreenState extends State<MySplashScreen> 
 {
   startTimer(){
+    fAuth.currentUser != null ? AssistantMethods.readCurrentOnlineUserInfo() : null;
     Timer(const Duration(seconds: 4), () async {
      // Send User to Home Screen
       if ( await fAuth.currentUser != null){
